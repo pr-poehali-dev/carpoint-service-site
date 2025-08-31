@@ -146,7 +146,7 @@ export default function Index() {
         <div className="absolute inset-0 bg-gradient-to-r from-car-blue/90 to-car-dark/80"></div>
         <div className="absolute inset-0">
           <img 
-            src="/img/9662c8ac-2d33-45d3-93fb-efa915ad8fad.jpg" 
+            src="/img/f3fbd931-0b02-4b0c-b8be-5a19df90e65a.jpg" 
             alt="Автосервис CarPoint"
             className="w-full h-full object-cover"
           />
