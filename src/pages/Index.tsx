@@ -325,6 +325,240 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Contacts Section */}
+      <section id="contacts" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <AnimatedSection animation="fade-in">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-bold text-car-dark mb-6">
+                Свяжитесь с нами —<br className="hidden md:block" />
+                <span className="text-car-orange">мы всегда на связи!</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Приезжайте к нам или оставьте заявку — ответим быстро и поможем решить любые вопросы по вашему автомобилю
+              </p>
+            </AnimatedSection>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Contact Info */}
+            <AnimatedSection animation="slide-in-left">
+              <div className="space-y-8">
+                <div className="bg-gradient-to-br from-car-gray to-slate-100 p-8 rounded-2xl">
+                  <h3 className="text-2xl font-heading font-bold text-car-dark mb-6">Контактная информация</h3>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-car-orange rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Icon name="Phone" className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-car-dark mb-1">Телефон</h4>
+                        <p className="text-xl font-bold text-car-orange">+7 (933) 611-32-28</p>
+                        <p className="text-sm text-gray-600">Звоните ежедневно с 10:00 до 22:00</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-car-blue rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Icon name="MapPin" className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-car-dark mb-1">Адрес</h4>
+                        <p className="text-lg text-gray-700">г. Москва, ул. Гагарина, 15</p>
+                        <p className="text-sm text-gray-600">Удобная парковка, рядом с метро</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Icon name="Clock" className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-car-dark mb-1">Режим работы</h4>
+                        <p className="text-lg text-gray-700">Ежедневно: 10:00 — 22:00</p>
+                        <p className="text-sm text-gray-600">Без выходных и перерывов</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Icon name="Mail" className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-car-dark mb-1">Email</h4>
+                        <p className="text-lg text-gray-700">info@carpoint-moscow.ru</p>
+                        <p className="text-sm text-gray-600">Ответим в течение часа</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Social Media */}
+                <div className="bg-gradient-to-br from-car-orange/10 to-orange-50 p-6 rounded-2xl">
+                  <h4 className="font-semibold text-car-dark mb-4">Мы в социальных сетях</h4>
+                  <div className="flex gap-4">
+                    <div className="w-12 h-12 bg-car-orange hover:bg-orange-600 rounded-xl flex items-center justify-center transition-colors cursor-pointer group">
+                      <Icon name="MessageCircle" className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
+                    </div>
+                    <div className="w-12 h-12 bg-purple-500 hover:bg-purple-600 rounded-xl flex items-center justify-center transition-colors cursor-pointer group">
+                      <Icon name="Instagram" className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
+                    </div>
+                    <div className="w-12 h-12 bg-blue-500 hover:bg-blue-600 rounded-xl flex items-center justify-center transition-colors cursor-pointer group">
+                      <Icon name="Send" className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
+                    </div>
+                    <div className="w-12 h-12 bg-green-500 hover:bg-green-600 rounded-xl flex items-center justify-center transition-colors cursor-pointer group">
+                      <Icon name="Phone" className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-600 mt-3">Подписывайтесь на наши новости и акции</p>
+                </div>
+              </div>
+            </AnimatedSection>
+            
+            {/* Contact Form */}
+            <AnimatedSection animation="slide-in-right">
+              <Card className="border-0 shadow-xl">
+                <CardHeader className="text-center">
+                  <CardTitle className="text-2xl font-heading text-car-dark">
+                    Быстрая связь
+                  </CardTitle>
+                  <CardDescription className="text-base">
+                    Оставьте сообщение — перезвоним в течение 15 минут
+                  </CardDescription>
+                </CardHeader>
+                
+                <CardContent className="space-y-4">
+                  <form className="space-y-4">
+                    <div>
+                      <label htmlFor="contact-name" className="block text-sm font-medium text-gray-700 mb-2">
+                        Ваше имя
+                      </label>
+                      <input
+                        type="text"
+                        id="contact-name"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-car-orange focus:border-transparent transition-all"
+                        placeholder="Как к вам обращаться?"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="contact-phone" className="block text-sm font-medium text-gray-700 mb-2">
+                        Номер телефона *
+                      </label>
+                      <input
+                        type="tel"
+                        id="contact-phone"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-car-orange focus:border-transparent transition-all"
+                        placeholder="+7 (999) 123-45-67"
+                        required
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="contact-service" className="block text-sm font-medium text-gray-700 mb-2">
+                        Интересующая услуга
+                      </label>
+                      <select 
+                        id="contact-service"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-car-orange focus:border-transparent transition-all"
+                      >
+                        <option value="">Выберите услугу</option>
+                        <option value="oil">Замена масла</option>
+                        <option value="diagnostics">Диагностика двигателя</option>
+                        <option value="brakes">Тормозная система</option>
+                        <option value="suspension">Ходовая часть</option>
+                        <option value="engine">Ремонт двигателя и КПП</option>
+                        <option value="other">Другое</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="contact-message" className="block text-sm font-medium text-gray-700 mb-2">
+                        Сообщение
+                      </label>
+                      <textarea
+                        id="contact-message"
+                        rows={4}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-car-orange focus:border-transparent transition-all resize-none"
+                        placeholder="Опишите вашу проблему или вопрос..."
+                      ></textarea>
+                    </div>
+                    
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-car-orange hover:bg-orange-600 text-white py-3 text-lg font-semibold"
+                    >
+                      <Icon name="Send" className="w-5 h-5 mr-2" />
+                      Отправить сообщение
+                    </Button>
+                  </form>
+                  
+                  <div className="text-center pt-4 border-t">
+                    <p className="text-sm text-gray-600 mb-3">Или запишитесь прямо сейчас:</p>
+                    <Button 
+                      className="bg-car-blue hover:bg-blue-700 text-white px-6 py-2"
+                      onClick={() => setIsBookingOpen(true)}
+                    >
+                      <Icon name="Calendar" className="w-4 h-4 mr-2" />
+                      Онлайн-запись
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+          </div>
+          
+          {/* Map Section */}
+          <AnimatedSection animation="fade-in" delay={300}>
+            <div className="mt-16">
+              <h3 className="text-2xl font-heading font-bold text-car-dark text-center mb-8">
+                Как нас найти
+              </h3>
+              <div className="bg-gradient-to-br from-car-gray to-slate-100 p-6 rounded-2xl">
+                <div className="bg-gray-300 h-96 rounded-xl flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-car-blue/20 to-car-orange/10"></div>
+                  <div className="text-center z-10">
+                    <div className="w-16 h-16 bg-car-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Icon name="MapPin" className="w-8 h-8 text-white" />
+                    </div>
+                    <h4 className="text-xl font-bold text-car-dark mb-2">CarPoint Автосервис</h4>
+                    <p className="text-gray-700">г. Москва, ул. Гагарина, 15</p>
+                    <p className="text-sm text-gray-600 mt-2">Интерактивная карта будет добавлена</p>
+                  </div>
+                </div>
+                
+                <div className="grid md:grid-cols-3 gap-6 mt-6">
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mx-auto mb-3">
+                      <Icon name="Car" className="w-6 h-6 text-white" />
+                    </div>
+                    <h5 className="font-semibold text-car-dark mb-1">Парковка</h5>
+                    <p className="text-sm text-gray-600">Бесплатная для клиентов</p>
+                  </div>
+                  
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mx-auto mb-3">
+                      <Icon name="Train" className="w-6 h-6 text-white" />
+                    </div>
+                    <h5 className="font-semibold text-car-dark mb-1">Метро</h5>
+                    <p className="text-sm text-gray-600">5 минут пешком</p>
+                  </div>
+                  
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mx-auto mb-3">
+                      <Icon name="Coffee" className="w-6 h-6 text-white" />
+                    </div>
+                    <h5 className="font-semibold text-car-dark mb-1">Зона ожидания</h5>
+                    <p className="text-sm text-gray-600">Кофе и Wi-Fi</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer id="contacts" className="bg-car-dark text-white py-16">
         <div className="container mx-auto px-4">
