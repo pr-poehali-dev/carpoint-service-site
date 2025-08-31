@@ -166,10 +166,10 @@ export default function Index() {
           <Button 
             size="lg" 
             className="bg-car-orange hover:bg-orange-600 text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold"
-            onClick={() => setIsBookingOpen(true)}
+            onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
           >
             <Icon name="Wrench" className="w-4 md:w-5 h-4 md:h-5 mr-2" />
-            Записаться
+            Услуги
           </Button>
         </div>
       </section>
@@ -609,21 +609,21 @@ export default function Index() {
                 className="bg-car-orange hover:bg-orange-600 text-white mb-6 w-full"
                 onClick={() => setIsBookingOpen(true)}
               >
-                <Icon name="Calendar" className="w-4 h-4 mr-2" />
-                Записаться на сервис
+                <Icon name="MessageSquare" className="w-4 h-4 mr-2" />
+                Связаться с нами
               </Button>
               
               <div className="flex gap-4">
-                <div className="w-10 h-10 bg-gray-700 hover:bg-car-orange rounded-lg flex items-center justify-center transition-colors cursor-pointer">
+                <div className="w-10 h-10 bg-gray-700 hover:bg-car-orange rounded-lg flex items-center justify-center transition-colors cursor-pointer" title="VK">
                   <Icon name="MessageCircle" className="w-5 h-5" />
                 </div>
-                <div className="w-10 h-10 bg-gray-700 hover:bg-car-orange rounded-lg flex items-center justify-center transition-colors cursor-pointer">
+                <div className="w-10 h-10 bg-gray-700 hover:bg-car-orange rounded-lg flex items-center justify-center transition-colors cursor-pointer" title="Instagram">
                   <Icon name="Instagram" className="w-5 h-5" />
                 </div>
-                <div className="w-10 h-10 bg-gray-700 hover:bg-car-orange rounded-lg flex items-center justify-center transition-colors cursor-pointer">
+                <div className="w-10 h-10 bg-gray-700 hover:bg-car-orange rounded-lg flex items-center justify-center transition-colors cursor-pointer" title="Telegram">
                   <Icon name="Send" className="w-5 h-5" />
                 </div>
-                <div className="w-10 h-10 bg-gray-700 hover:bg-car-orange rounded-lg flex items-center justify-center transition-colors cursor-pointer">
+                <div className="w-10 h-10 bg-gray-700 hover:bg-car-orange rounded-lg flex items-center justify-center transition-colors cursor-pointer" title="WhatsApp">
                   <Icon name="Phone" className="w-5 h-5" />
                 </div>
               </div>
