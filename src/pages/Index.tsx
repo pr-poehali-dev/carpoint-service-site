@@ -1,9 +1,13 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import AnimatedSection from '@/components/AnimatedSection';
+import BookingModal from '@/components/BookingModal';
 
 export default function Index() {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
   const services = [
     {
       title: "Замена масла",
@@ -103,8 +107,8 @@ export default function Index() {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b shadow-sm">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-8">
+          <div className="flex flex-col xl:flex-row items-center justify-between gap-4">
+            <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-car-orange to-orange-600 rounded-xl flex items-center justify-center">
                   <Icon name="Car" className="w-6 h-6 text-white" />
@@ -112,22 +116,22 @@ export default function Index() {
                 <span className="text-2xl font-heading font-bold text-car-dark">CarPoint</span>
               </div>
               
-              <nav className="hidden lg:flex items-center gap-6">
-                <a href="#about" className="text-gray-700 hover:text-car-orange transition-colors font-medium">О нас</a>
-                <a href="#process" className="text-gray-700 hover:text-car-orange transition-colors font-medium">Процесс</a>
-                <a href="#services" className="text-gray-700 hover:text-car-orange transition-colors font-medium">Услуги</a>
-                <a href="#reviews" className="text-gray-700 hover:text-car-orange transition-colors font-medium">Отзывы</a>
-                <a href="#contacts" className="text-gray-700 hover:text-car-orange transition-colors font-medium">Контакты</a>
+              <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
+                <a href="#about" className="text-gray-700 hover:text-car-orange transition-colors font-medium text-sm xl:text-base">О нас</a>
+                <a href="#process" className="text-gray-700 hover:text-car-orange transition-colors font-medium text-sm xl:text-base">Процесс</a>
+                <a href="#services" className="text-gray-700 hover:text-car-orange transition-colors font-medium text-sm xl:text-base">Услуги</a>
+                <a href="#reviews" className="text-gray-700 hover:text-car-orange transition-colors font-medium text-sm xl:text-base">Отзывы</a>
+                <a href="#contacts" className="text-gray-700 hover:text-car-orange transition-colors font-medium text-sm xl:text-base">Контакты</a>
               </nav>
             </div>
             
-            <div className="flex flex-col lg:flex-row items-center gap-4 text-sm">
-              <div className="flex items-center gap-4">
+            <div className="flex flex-col lg:flex-row items-center gap-2 lg:gap-4 text-xs lg:text-sm">
+              <div className="flex flex-col lg:flex-row items-center gap-2 lg:gap-4">
                 <div className="flex items-center gap-2 text-car-blue">
                   <Icon name="Phone" className="w-4 h-4" />
                   <span className="font-semibold">+7 (933) 611-32-28</span>
                 </div>
-                <div className="flex items-center gap-2 text-car-blue">
+                <div className="hidden lg:flex items-center gap-2 text-car-blue">
                   <Icon name="MapPin" className="w-4 h-4" />
                   <span>г. Москва, ул. Гагарина, 15</span>
                 </div>
@@ -152,16 +156,20 @@ export default function Index() {
           />
         </div>
         <div className="relative container mx-auto px-4 text-center text-white">
-          <h1 className="text-4xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
-            Надёжный автосервис <br />
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
+            Надёжный автосервис <br className="hidden md:block" />
             <span className="text-car-orange">в Москве</span>
           </h1>
-          <p className="text-xl lg:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto px-4">
             Ремонт, обслуживание и диагностика — быстро, качественно, удобно
           </p>
-          <Button size="lg" className="bg-car-orange hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold">
-            <Icon name="Wrench" className="w-5 h-5 mr-2" />
-            Услуги
+          <Button 
+            size="lg" 
+            className="bg-car-orange hover:bg-orange-600 text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold"
+            onClick={() => setIsBookingOpen(true)}
+          >
+            <Icon name="Wrench" className="w-4 md:w-5 h-4 md:h-5 mr-2" />
+            Записаться
           </Button>
         </div>
       </section>
@@ -170,15 +178,16 @@ export default function Index() {
       <section id="about" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-heading font-bold text-car-dark mb-6">
-              Точка, с которой начинается <br />
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-bold text-car-dark mb-6">
+              Точка, с которой начинается <br className="hidden md:block" />
               <span className="text-car-orange">уверенность в авто</span>
             </h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="text-center p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <AnimatedSection key={index} animation="fade-in" delay={index * 100}>
+                <Card className="text-center p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <CardHeader>
                   <div className="w-16 h-16 bg-gradient-to-br from-car-orange to-orange-600 rounded-2xl mx-auto mb-4 flex items-center justify-center">
                     <Icon name={feature.icon as any} className="w-8 h-8 text-white" />
@@ -188,7 +197,8 @@ export default function Index() {
                 <CardContent>
                   <p className="text-gray-600">{feature.description}</p>
                 </CardContent>
-              </Card>
+                </Card>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -206,7 +216,8 @@ export default function Index() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {process.map((item, index) => (
-              <Card key={index} className="p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+              <AnimatedSection key={index} animation="slide-in-left" delay={index * 150}>
+                <Card className="process-step p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-4 mb-3">
                     <div className="w-12 h-12 bg-car-orange text-white rounded-xl flex items-center justify-center font-bold text-lg">
@@ -220,7 +231,8 @@ export default function Index() {
                 <CardContent>
                   <p className="text-gray-700 font-medium">{item.title}</p>
                 </CardContent>
-              </Card>
+                </Card>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -237,7 +249,8 @@ export default function Index() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <AnimatedSection key={index} animation="scale-in" delay={index * 100}>
+                <Card className="service-card p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-car-orange to-orange-600 rounded-xl flex items-center justify-center">
@@ -254,12 +267,17 @@ export default function Index() {
                     {service.description}
                   </CardDescription>
                 </CardContent>
-              </Card>
+                </Card>
+              </AnimatedSection>
             ))}
           </div>
           
           <div className="text-center mt-12">
-            <Button size="lg" className="bg-car-orange hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold">
+            <Button 
+              size="lg" 
+              className="bg-car-orange hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold"
+              onClick={() => setIsBookingOpen(true)}
+            >
               <Icon name="Calendar" className="w-5 h-5 mr-2" />
               Записаться
             </Button>
@@ -279,7 +297,8 @@ export default function Index() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {reviews.map((review, index) => (
-              <Card key={index} className="p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+              <AnimatedSection key={index} animation="slide-in-right" delay={index * 200}>
+                <Card className="review-card p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-car-orange to-orange-600 rounded-full flex items-center justify-center">
@@ -299,7 +318,8 @@ export default function Index() {
                     ))}
                   </div>
                 </CardContent>
-              </Card>
+                </Card>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -351,9 +371,12 @@ export default function Index() {
             
             <div>
               <h3 className="text-xl font-heading font-semibold mb-6">Связаться с нами</h3>
-              <Button className="bg-car-orange hover:bg-orange-600 text-white mb-6 w-full">
-                <Icon name="MessageSquare" className="w-4 h-4 mr-2" />
-                Написать нам
+              <Button 
+                className="bg-car-orange hover:bg-orange-600 text-white mb-6 w-full"
+                onClick={() => setIsBookingOpen(true)}
+              >
+                <Icon name="Calendar" className="w-4 h-4 mr-2" />
+                Записаться на сервис
               </Button>
               
               <div className="flex gap-4">
@@ -382,6 +405,11 @@ export default function Index() {
           </div>
         </div>
       </footer>
+      
+      <BookingModal 
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)} 
+      />
     </div>
   );
 }
