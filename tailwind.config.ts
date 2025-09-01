@@ -66,10 +66,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				'car-orange': '#FF6B35',
-				'car-blue': '#2C3E50',
-				'car-gray': '#ECF0F1',
-				'car-dark': '#1A1F2C'
+				'tech-primary': '#6366f1',
+				'tech-secondary': '#8b5cf6',
+				'tech-accent': '#06b6d4',
+				'tech-dark': '#0f172a',
+				'tech-gray': '#f1f5f9'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
