@@ -66,11 +66,13 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				'tech-primary': '#6366f1',
-				'tech-secondary': '#8b5cf6',
-				'tech-accent': '#06b6d4',
-				'tech-dark': '#0f172a',
-				'tech-gray': '#f1f5f9'
+				'neon-cyan': '#00ffff',
+				'neon-pink': '#ff0080',
+				'neon-purple': '#8000ff',
+				'neon-green': '#00ff00',
+				'cyber-dark': '#000512',
+				'cyber-blue': '#001133',
+				'cyber-gray': '#0a0a0f'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
